@@ -3,7 +3,7 @@
 include 'dbConnection.php';
 
 // Fetch data from Materi_Pelajaran table
-$query = "SELECT * FROM Materi_Pelajaran";
+$query = "SELECT id_materi, mata_pelajaran, tingkat_kelas, sumber_belajar FROM Materi_Pelajaran";
 $result = mysqli_query($mysqli, $query);
 
 // Check if the query was successful
@@ -40,10 +40,10 @@ if (!$result) {
         // Loop through the result set and display data
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>{$row['ID_Materi']}</td>";
-            echo "<td>{$row['Mata_Pelajaran']}</td>";
-            echo "<td>{$row['Tingkat_Kelas']}</td>";
-            echo "<td>{$row['Sumber_Belajar']}</td>";
+            echo "<td>{$row['id_materi']}</td>";
+            echo "<td>{$row['mata_pelajaran']}</td>";
+            echo "<td>{$row['tingkat_kelas']}</td>";
+            echo "<td>{$row['sumber_belajar']}</td>";
             echo "</tr>";
         }
         ?>

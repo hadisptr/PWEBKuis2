@@ -3,7 +3,7 @@
 include 'dbConnection.php';
 
 // Fetch data from Jadwal_Bimbingan table
-$query = "SELECT * FROM Jadwal_Bimbingan";
+$query = "SELECT id_jadwal, id_siswa, id_guru, mata_pelajaran, tanggal, waktu  FROM Jadwal_Bimbingan";
 $result = mysqli_query($mysqli, $query);
 
 // Check if the query was successful
@@ -36,20 +36,18 @@ if (!$result) {
             <th>Mata Pelajaran</th>
             <th>Tanggal</th>
             <th>Waktu</th>
-            <th>Status</th>
         </tr>
 
         <?php
         // Loop through the result set and display data
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>{$row['ID_Jadwal']}</td>";
-            echo "<td>{$row['ID_Siswa']}</td>";
-            echo "<td>{$row['ID_Guru']}</td>";
-            echo "<td>{$row['Mata_Pelajaran']}</td>";
-            echo "<td>{$row['Tanggal']}</td>";
-            echo "<td>{$row['Waktu']}</td>";
-            echo "<td>{$row['Status']}</td>";
+            echo "<td>{$row['id_jadwal']}</td>";
+            echo "<td>{$row['id_siswa']}</td>";
+            echo "<td>{$row['id_guru']}</td>";
+            echo "<td>{$row['mata_pelajaran']}</td>";
+            echo "<td>{$row['tanggal']}</td>";
+            echo "<td>{$row['waktu']}</td>";
             echo "</tr>";
         }
         ?>

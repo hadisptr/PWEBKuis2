@@ -3,7 +3,7 @@
 include 'dbConnection.php';
 
 // Fetch data from Guru table
-$query = "SELECT * FROM Guru";
+$query = "SELECT id_guru, nama_guru, mata_pelajaran, data_kontak FROM guru";
 $result = mysqli_query($mysqli, $query);
 
 // Check if the query was successful
@@ -42,10 +42,10 @@ if (!$result) {
         // Loop through the result set and display data
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>{$row['ID_Guru']}</td>";
-            echo "<td>{$row['Nama_Guru']}</td>";
-            echo "<td>{$row['Mata_Pelajaran']}</td>";
-            echo "<td>{$row['Data_Kontak']}</td>";
+            echo "<td>{$row['id_guru']}</td>";
+            echo "<td>{$row['nama_guru']}</td>";
+            echo "<td>{$row['mata_pelajaran']}</td>";
+            echo "<td>{$row['data_kontak']}</td>";
             echo "</tr>";
         }
         ?>
